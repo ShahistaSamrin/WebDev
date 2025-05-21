@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="prog.css">
+    </head>
+    <body>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+            <video controls width="320" height="180">
+                <source src="a.mp4" type="video/mp4">
+            </video>
+        </div>
+        <script>
+            // Add mouseover and mouseout event listeners to all video elements
+            document.addEventListener('DOMContentLoaded', function() {
+                const videos = document.querySelectorAll('video');
+                videos.forEach(video => {
+                    let playTimeout;
+                    video.style.transition = 'box-shadow 0.3s ease';
+                    video.addEventListener('mouseover', () => {
+                        video.style.boxShadow = '0 0 15px 5px #00f';
+                        video.play();
+                        playTimeout = setTimeout(() => {
+                            video.pause();
+                        }, 5000);
+                    });
+                    video.addEventListener('mouseout', () => {
+                        video.style.boxShadow = 'none';
+                        clearTimeout(playTimeout);
+                        video.pause();
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
